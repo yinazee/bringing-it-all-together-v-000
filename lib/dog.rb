@@ -51,7 +51,7 @@ class Dog
    sql = <<-SQL
    SELECT *
    FROM dogs
-   WHERE id = ? 
+   WHERE id = ?
    LIMIT 1
    SQL
 
@@ -66,5 +66,4 @@ def self.new_from_db(row)
   name = row[1]
   breed = row[2]
   self.new(id, name, breed)
-  
 end

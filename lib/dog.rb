@@ -83,5 +83,6 @@ class Dog
     else
       dog = self.create(attributes)
   end
+end
 
 end

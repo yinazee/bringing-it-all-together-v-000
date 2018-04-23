@@ -45,6 +45,7 @@ class Dog
    # dog.save
    # dog
    new(attributes).tap{ |h| h.save }
+   binding.pry
  end
 
 

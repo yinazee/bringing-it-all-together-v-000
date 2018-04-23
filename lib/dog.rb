@@ -67,7 +67,7 @@ class Dog
    DB[:conn].execute(sql, id).map do |row|
      self.new_from_db(row)
    end.first
- end
+  end
 
   def self.update
     sql "UPDATE dog SET name = ?, breed = ? WHERE id = ?"

@@ -37,7 +37,7 @@ class Dog
  end
 
  def self.create(hash)
-   new(hash).tap{|h| h.save}
+   hash.each {|key, value| self.send(("{key=}"), value)}
  end
 
 end

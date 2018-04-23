@@ -40,11 +40,11 @@ class Dog
    self
  end
 
- def self.create(hash)
+ def self.create(attributes)
    # dog = self.new
    # dog.save
    # dog
-   new(hash).tap{ |h| h.save }
+   new(attributes).tap{ |h| h.save }
  end
 
 

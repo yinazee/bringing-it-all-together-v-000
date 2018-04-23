@@ -14,6 +14,7 @@ class Dog
        breed TEXT
        )
    SQL
+
    DB[:conn].execute(sql)
  end
 
@@ -30,6 +31,7 @@ class Dog
      INSERT INTO dogs (name, breed)
      VALUES (?, ?)
      SQL
+
      DB[:conn].execute(sql, self.name, self.breed)
      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
    end
@@ -47,6 +49,9 @@ class Dog
    sql = <<-SQL
    "SELECT * FROM dogs WHERE id = ? LIMIT 1"
    SQL
+
+   DB[:conn].execute(sql, id).map {|row| self.new_from_db(row)}
+  end.first
  end
 
 end

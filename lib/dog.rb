@@ -38,7 +38,6 @@ class Dog
 
  def self.create(hash)
    new(hash).tap{ |h| h.save }
-
  end
 
 end

@@ -31,7 +31,7 @@ class Dog
      VALUES (?, ?)
      SQL
      DB[:conn].execute(sql, self.name, self.breed)
-     @id: = DB[:conn].execute("SELECT las_insert_rowid() FROM dogs").flatten[0]
+     @id = DB[:conn].execute("SELECT las_insert_rowid() FROM dogs").flatten[0]
    end
    self
 end
